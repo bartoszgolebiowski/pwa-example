@@ -9,11 +9,12 @@ function randomValueFromArray(array) {
 }
 
 function App() {
+  
   useEffect(() => {
     const ticker = setInterval(function () {
       const imgElem = document.getElementById("#fox");
       let randomChoice = randomValueFromArray(images);
-      imgElem.src = "static/" + randomChoice + ".jpg";
+      imgElem.src = "fox/" + randomChoice + ".jpg";
       return () => {
         clearInterval(ticker);
       };
@@ -22,7 +23,10 @@ function App() {
 
   return (
     <div className="App">
-      <img id="#fox" src="static/fox1.jpg" alt="a fox picture" />
+      <img id="#fox" src="fox/fox1.jpg" alt="a fox picture" />
+      <button className="add-button" id="#a2hs">
+        Add to home screen
+      </button>
     </div>
   );
 }
